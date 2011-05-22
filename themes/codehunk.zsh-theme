@@ -6,6 +6,10 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
+function current_env {
+    [ $CURRENT_ENV ] && echo '('`basename $CURRENT_ENV`') '
+}
+
 function hg_prompt_info {
     $OH_MY_ZSH_HG prompt --angle-brackets "\
 < on %{$fg[magenta]%}<branch>%{$reset_color%}>\
@@ -34,7 +38,7 @@ done
 
 PROMPT='
 ┌(%l) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info) [ %w %t ] %(?..%{$fg_bold[red]%} (%?%) %{$reset_color%}) 
-└(%h) %{$fg_bold[white]%}$(virtualenv_info)%{$fg[$NCOLOR]%}$(prompt_char)➤ %{$reset_color%}'
+└(%h) $(virtualenv_info)%{$fg_bold[white]%}$(current_env)%{$fg[$NCOLOR]%}$(prompt_char)➤ %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
