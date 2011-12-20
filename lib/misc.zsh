@@ -10,8 +10,8 @@ bindkey "^[m" copy-prev-shell-word
 setopt long_list_jobs
 
 ## pager
-export PAGER='less -R'
-export LC_CTYPE=en_US.UTF-8
+export PAGER=less
+export LC_CTYPE=$LANG
 
 ## pretty man pages
 function pman() {
@@ -27,7 +27,7 @@ function pj() {
 
 
 ## Open current directory
-alias oo='open .'
+alias oo='nautilus .'
 
 ## Quick-look a file (^C to close)
 alias ql='qlmanage -p 2>/dev/null'
