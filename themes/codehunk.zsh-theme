@@ -37,7 +37,7 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 done
 
 PROMPT='
-┌(%l) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info) [ %w %t ] %(?..%{$fg_bold[red]%} (%?%) %{$reset_color%}) 
+┌(%l) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}$(box_name)%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info) [ %w %t ] %(?..%{$fg_bold[red]%} ✘ %?% %{$reset_color%}) 
 └(%h) $(virtualenv_info)%{$fg_bold[white]%}$(current_env)%{$fg[$NCOLOR]%}$(prompt_char)➤ %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
